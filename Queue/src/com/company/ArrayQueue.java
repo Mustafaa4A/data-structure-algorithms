@@ -23,12 +23,15 @@ public class ArrayQueue {
         size++;
     }
 
-    public void dequeue(){
+    public int dequeue(){
         if (size == 0) throw new RuntimeException();
 
+        int item = queue[head];
         queue[head] = 0;
         head = (head + 1) % queue.length;
         size--;
+
+        return item;
     }
 
     public boolean isEmpty(){
