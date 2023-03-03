@@ -25,7 +25,8 @@ public class CharFinder {
         Set<Character> set = new HashSet<>();
         char[] chars = string.toCharArray();
         for (char c:chars){
-            
+            if (set.contains(c)) return c;
+            set.add(c);
         }
 
         return Character.MIN_VALUE;
