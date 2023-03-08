@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Array {
     public int length;
     private int[] array;
@@ -23,14 +25,14 @@ public class Array {
         array[count++]=item;
     }
 
-    public int indexOf(int item){
-        for (int i = 0; i< count; i++){
-            if (array[i]==item)
+    public int indexOf(int item) {
+        for (int i = 0; i < count; i++) {
+            if (array[i] == item)
                 return i;
         }
         return -1;
     }
-//    12,13,14,15,16
+
     public void removeAt(int index) throws IllegalAccessException {
         if (index >= count || index <0){
             throw new IllegalAccessException();
@@ -80,11 +82,11 @@ public class Array {
         count++;
     }
 
-    public void print(){
-        for (int i = 0; i< count; i++){
-            System.out.print(array[i]+" ");
-        }
-        System.out.println("");
+    @Override
+    public String toString(){
+        int[] res = new int[count];
+        System.arraycopy(array, 0, res, 0, count);
+        return Arrays.toString(res);
     }
 
 

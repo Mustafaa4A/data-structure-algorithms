@@ -206,6 +206,7 @@ public class LinkedList {
             removeFirst();
             return;
         }
+
         if (index>=size){
             removeLast();
             return;
